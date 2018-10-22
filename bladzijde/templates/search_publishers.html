@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  	<form action="." method="get"> 
+		
+		<center><h>Search publishers by id</h></center>
+	        <center><input id="number_id" name ="number" type="text"/></center>
+		<br>
+		<center><input type="submit" id="search_submit" value="Search" /></center>
+
+{% if object_list %}
+
+    <ul>
+        {% for publisher in object_list %}
+            <li>{{ publisher.number }} - {{ publisher.name }}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+
+{% endblock %}
+
+
+
+

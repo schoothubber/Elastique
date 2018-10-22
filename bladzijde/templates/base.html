@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}Browsable RESTful API{% endblock %}</title>
+</head>
+
+<body style="background-color:White">
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+			<li><a href="/">Home</a></li>
+            <li><a href="/publishers"> All publishers</a></li>
+            <li><a href="/authors"> All authors</a></li>
+            <li><a href="/books"> All books</a></li>
+	    <li><a href="/publisher"> Search publisher</a></li>
+	    <li><a href="/author"> Search author</a></li>
+	    <li><a href="/book"> Search book</a></li>
+	    <li><a href="/publisher-kw-search"> Search publishers by keyword</a></li>
+	    <li><a href="/author-kw-search"> Search authors by keyword</a></li>
+ 	    <li><a href="/book-kw-search"> Search books by keyword</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+    
+    <hr>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<br>
+
+  	<form action="." method="get"> 
+		
+		<center><h>Search by keyword</h></center>
+	        <center><input id="keyword_id" name ="keyword" type="text"/></center>
+		<br>
+		<center><h>Enter offset (optional)</h></center>
+	        <center><input id="offset_id" name ="offset" type="text"/></center>
+		<br>
+		<center><h>Enter limit (optional)</h></center>
+	        <center><input id="limit_id" name ="limit" type="text"/></center>
+		<br>
+		<center><input type="submit" id="search_submit" value="Search" /></center>
+
+
+{% if publisher_list %}
+
+    <ul>
+        {% for publisher in publisher_list %}
+            <li>{{ publisher.number }} - {{ publisher.name }}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+
+{% if author_list %}
+    <ul>
+        {% for author in author_list %}
+            <li>{{ author.number }} - {{ author.first_name }} {{ author.last_name}}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+
+{% if book_list %}
+
+
+    <ul>
+        {% for book in book_list %}
+                id:{{ book.number }}
+		<br>
+		<br>
+		title: {{ book.title }}
+		<br>
+		<br>
+		description: {{ book.description }}
+		<br>
+		<br>
+		url: {{ book.cover_url }}
+		<br>
+		<br>
+		isbn: {{ book.isbn }}
+		<br>
+		<br>
+		publisher: {{ book.publisher }}
+		<br>
+		<br>
+		author: {{ book.author }}
+		
+		<hr>
+
+
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+
+{% endblock %}
+
+
+
+

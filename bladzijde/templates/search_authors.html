@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  	<form action="." method="get"> 
+		
+		<center><h>Search authors by id</h></center>
+	        <center><input id="number_id" name ="number" type="text"/></center>
+		<br>
+		<center><input type="submit" id="search_submit" value="Search" /></center>
+
+{% if object_list %}
+
+    <ul>
+        {% for author in object_list %}
+            <li>{{ author.number }} - {{ author.first_name }} {{ author.last_name}}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  	<form action="." method="get"> 
+		
+		<center><h>Search books by id</h></center>
+	        <center><input id="number_id" name ="number" type="text"/></center>
+		<br>
+		<center><input type="submit" id="search_submit" value="Search" /></center>
+
+{% if object_list %}
+
+
+    <ul>
+        {% for book in object_list %}
+                id:{{ book.number }}
+		<br>
+		<br>
+		title: {{ book.title }}
+		<br>
+		<br>
+		description: {{ book.description }}
+		<br>
+		<br>
+		url: {{ book.cover_url }}
+		<br>
+		<br>
+		isbn: {{ book.isbn }}
+		<br>
+		<br>
+		publisher: {{ book.publisher }}
+		<br>
+		<br>
+		author: {{ book.author }}
+
+
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+
+{% endblock %}
